@@ -28,11 +28,15 @@ const orderSchema = new mongoose.Schema(
             type: Number,
             required: true
         },
+        arrivalTime: {
+            type: String,
+            required: true
+        },
         status: {
             type: String,
             default: 'pending'
         }
-    }
+    }, {timestamps: true}
 )
 
 module.exports = mongoose.model('Object', orderSchema)
