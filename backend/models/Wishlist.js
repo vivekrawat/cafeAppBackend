@@ -14,7 +14,7 @@ const wishlistSchema = new mongoose.Schema(
                     ref: 'Item',
                     required: true
                 },
-                type: {
+                size: {
                     type: String,
                     required: true
                 },

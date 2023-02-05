@@ -1,10 +1,5 @@
 const mongoose  = require('mongoose')
 
-const priceSchema = new mongoose.Schema({
-    size: String,
-    cost: Number
-})
-
 const itemSchema = new mongoose.Schema(
   {
     title: {
@@ -17,11 +12,12 @@ const itemSchema = new mongoose.Schema(
     image: {
         type: String,
     },
-    price: {
-        price1: priceSchema,
-        price2: priceSchema,
-        price3: priceSchema
-    }
+    price: [
+      {
+        size: { type: String, required: true},
+        cost: { type: Number, required: true}
+      }
+    ]
   },
   { timestamps: true }
 );

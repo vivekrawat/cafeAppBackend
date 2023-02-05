@@ -7,6 +7,11 @@ const orderSchema = new mongoose.Schema(
             ref: 'User',
             required: true
         },
+        cafeId: {
+            type: mongoose.SchemaTypes.ObjectId,
+            ref: 'CafeRestro',
+            required: true
+        },
         items: [
             {
                 itemId: {
@@ -14,7 +19,7 @@ const orderSchema = new mongoose.Schema(
                     ref: 'Item',
                     required: true
                 },
-                type: {
+                size: {
                     type: String,
                     required: true
                 },
@@ -28,13 +33,10 @@ const orderSchema = new mongoose.Schema(
             type: Number,
             required: true
         },
-        arrivalTime: {
-            type: String,
-            required: true
-        },
         status: {
             type: String,
-            default: 'pending'
+            default: 'pending',
+            enum: ['pending', 'completed']
         }
     }, {timestamps: true}
 )
