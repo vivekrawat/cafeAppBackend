@@ -1,9 +1,15 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+import Navbar from "./Components/Navbar/Navbar.vue";
 </script>
 
 <template>
-  <HelloWorld msg="Vite + Vue" />
+  <div class="bg-primary-bg min-h-screen relative overflow-hidden">
+    <Navbar/>
+    <div class="min-h-full relative">
+			<router-view>
+			</router-view>
+		</div>
+  </div>
 </template>
 
 <style scoped>
